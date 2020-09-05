@@ -1,4 +1,4 @@
-# Tester l'App web immobilière avec Docker-compose 
+# Tester l'App web immobilière(Angular) avec Docker-compose 
 L'application à été réalisée avec Nodejs / Angular / Nginx et nécéssite Docker pour être lancée.
 * L'application a été stylisée . 
 * L'application possède 90% de ses fonctionnalités, certaines pages n'ont pas été créées
