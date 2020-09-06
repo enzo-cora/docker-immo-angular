@@ -36,7 +36,8 @@ services:
         container_name: web_site_enzo
         build:
             context: ./web
-            dockerfile: Dockerfile
+        depends_on:
+            - reverse_proxy
         image: angular_immo:enzo 
         restart: unless-stopped
         environment: 
@@ -50,7 +51,11 @@ services:
 
     reverse_proxy:
         image: nginx:1.18
+        volumes:
+            - ./reverse_proxy:/etc/nginx/conf.d
         restart: unless-stopped
+        depends_on:
+            - api_node
         container_name: reverse_proxy_enzo
         working_dir: /etc/nginx/conf.d
         environment:
